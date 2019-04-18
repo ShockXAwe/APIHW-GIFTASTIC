@@ -31,23 +31,23 @@ function theGif() {
 
 function displayButtons() {
     
-    // Deleting the buttons prior to adding new movies
+    
     // (this is necessary otherwise you will have repeat buttons)
     $("#buttonArea").empty();
     
 
-    // Looping through the array of movies
+    // Looping through the array of topics
     for (var i = 0; i < topics.length; i++) {
 
-      // Then dynamicaly generating buttons for each movie in the array
+      // Then dynamicaly generating buttons for each topic in the array
       var button = $("<button>");
-      // Adding a class of movie to our button
+      // Adding a class of gif to our button
       button.addClass("gif");
-      // Adding a data-attribute
+      // Adding a data-gif
       button.attr("data-gif", topics[i]);
       // Providing the initial button text
       button.text(topics[i]);
-      // Adding the button to the buttons-view div
+      // Adding the button to the buttonsArea div
       $("#buttonArea").append(button);
     }
 }
@@ -62,13 +62,13 @@ function displayButtons() {
     // The movie from the textbox is then added to our array
     topics.push(gifToPush);
 
-    // Calling displayButtons which handles the processing of our movie array
+    // Calling displayButtons which handles the processing of our topics array
     displayButtons();
 
 
   });
 
-  // Generic function for displaying the movieInfo
+  // Generic function for displaying the gif and info
   $(document).on("click", ".gif", theGif);
 
   // Calling the displayButtons function to display the intial buttons
